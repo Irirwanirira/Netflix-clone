@@ -5,7 +5,7 @@ import NetFlix from './components/page/NetFlix';
 import SignUpPage from './components/page/SignUpPage';
 import TvShow from './components/page/TvShow';
 import MoviePage from './components/page/MoviePage';
-import Header from './components/Header';
+import Player from './components/page/player';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
     <Route path='/' element={<NetFlix />}/>
     <Route path='/login' element={<Login />}/>
     <Route path='/signup' element={<SignUpPage />}/>
+    <Route path='/player' element={<Player />}/>
     <Route path='/tv' element={<TvShow />}/>
     <Route path='/movie' element={<MoviePage />}/>
 
