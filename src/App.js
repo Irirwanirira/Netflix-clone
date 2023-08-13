@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Login from './components/page/LoginPage';
-import NetFlix from './components/page/NetFlix';
-import SignUpPage from './components/page/SignUpPage';
-import TvShow from './components/page/TvShow';
-import MoviePage from './components/page/MoviePage';
-import Player from './components/page/player';
+import Login from './page/LoginPage';
+import NetFlix from './page/NetFlix';
+import SignUpPage from './page/SignUpPage';
+import TvShow from './page/TvShow';
+import MoviePage from './page/MoviePage';
+import Player from './page/player';
 
 function App() {
   return (
@@ -18,10 +18,7 @@ function App() {
     <Route path='/player' element={<Player />}/>
     <Route path='/tv' element={<TvShow />}/>
     <Route path='/movie' element={<MoviePage />}/>
-
-
   </Routes>
-
   </BrowserRouter>
     </div>
   );

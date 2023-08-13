@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-import { firebaseAuth } from "../../utils/firebase-config";
-import Header from "../Header";
-import BackGround from "../BackgroundImg";
+import { firebaseAuth } from '../utils/firebase-config';
+import Header from "../components/Header";
+import BackGround from "../components/BackgroundImg";
 
 const SignUpPage = () => {
 

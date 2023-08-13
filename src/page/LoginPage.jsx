@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
-import Header from '../Header';
-import BackGround from '../BackgroundImg';
-import { firebaseAuth } from '../../utils/firebase-config';
+import Header from '../components/Header'
+import BackGround from '../components/BackgroundImg';
+import { firebaseAuth } from '../utils/firebase-config';
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
