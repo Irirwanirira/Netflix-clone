@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-// import {AiOutLineInfoCircle} from 'react-icons/ai'
-// import {faPlay} from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import TopNav from '../components/TopNav';
-// import Card from '../components/Card';
 import { fetchMovieData, getGenres } from '../store';
 import SliderContainer from '../components/SliderContainer';
 
@@ -20,20 +17,18 @@ const NetFlix = () => {
 
   const navigate = useNavigate();
 
-  const movies = useSelector((state) => state.netflix.movies)
-  const genresLoaded = useSelector((state)=>state.netflix.genresLoaded)
+  const movies = useSelector((state) => state.netflix.movies);
+  const genresLoaded = useSelector((state) => state.netflix.genresLoaded);
 
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     dispatch(getGenres());
   }, []);
 
-
   useEffect(() => {
-    if(genresLoaded){
-      dispatch(fetchMovieData({type: "all"}));
+    if (genresLoaded) {
+      dispatch(fetchMovieData({ type: 'all' }));
     }
   });
   // console.log(movies);
@@ -74,7 +69,7 @@ const NetFlix = () => {
           </div>
         </div>
       </div>
-      <SliderContainer movies={movies}/>
+      <SliderContainer movies={movies} />
     </HeroContainer>
   );
 };
@@ -87,10 +82,7 @@ const HeroContainer = styled.div`
       height: 70vh;
       width: 100%;
     }
-    /* img{
-            height: 100vh;
-            width: 100%;
-        } */
+
     .container {
       position: absolute;
       bottom: 1rem;
