@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 
 export default React.memo(function MovieSlider({ data, title }) {
-  const [ControlVisibility, setControlVisibility] = useState(false);
+  const [controlVisibility, setControlVisibility] = useState(false);
 
   const listRef = useRef();
   const [sliderPosition, setSliderPosition] = useState(0);
@@ -24,14 +24,14 @@ export default React.memo(function MovieSlider({ data, title }) {
 
   return (
     <Container
-      ControlVisibility={ControlVisibility}
+      controlVisibility={controlVisibility}
       onMouseEnter={() => setControlVisibility(true)}
       onMouseLeave={() => setControlVisibility(false)}
     >
       <h1>{title}</h1>
       <div className='wrapper'>
         <div
-          className={`slider-action left ${!ControlVisibility ? 'none' : ''}`}
+          className={`slider-action left ${!controlVisibility ? 'none' : ''}`}
         >
           <AiOutlineLeft onClick={() => handleDirection('left')} />
         </div>
@@ -50,7 +50,7 @@ export default React.memo(function MovieSlider({ data, title }) {
           })}
         </div>
         <div
-          className={`slider-action right ${!ControlVisibility ? 'none' : ''}`}
+          className={`slider-action right ${!controlVisibility ? 'none' : ''}`}
         >
           <AiOutlineRight onClick={() => handleDirection('right')} />
         </div>
