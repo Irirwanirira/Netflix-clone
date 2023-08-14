@@ -3,11 +3,11 @@ import styled from 'styled-components';
 // import {AiOutLineInfoCircle} from 'react-icons/ai'
 // import {faPlay} from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TopNav from '../components/TopNav';
 import Card from '../components/Card';
-import { getGenres } from '../store';
+import { fetchMovieData, getGenres } from '../store';
 
 const NetFlix = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,11 +19,21 @@ const NetFlix = () => {
 
   const navigate = useNavigate();
 
+  const genresLoaded = useSelector((state)=>state.netflix.genresLoaded)
+
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     dispatch(getGenres());
   }, []);
+
+
+  useEffect(() => {
+    if(genresLoaded){
+      dispatch(fetchMovieData({type: "all"}));
+    }
+  });
 
   return (
     <HeroContainer>
