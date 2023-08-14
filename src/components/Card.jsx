@@ -7,7 +7,7 @@ import { RiThumbUpFill, RiThumbDownFill } from 'react-icons/ri';
 import { BiChevronDown } from 'react-icons/bi';
 import { BsCheck } from 'react-icons/bs';
 
-const Card = () => {
+export default React.memo(function Card ({movieData}){
   const [onHovered, setOnHovered] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const Card = () => {
       onMouseLeave={() => setOnHovered(false)}
     >
       <img
-        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaCor4AIV__zuNlgGZTSr424NdUudWBQKBrA&usqp=CAU'
+        src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
         alt='movie poster'
         onClick={() => navigate('/player')}
       />
@@ -26,8 +26,8 @@ const Card = () => {
         <div className='hover'>
           <div className='image-video-wrapper'>
             <img
-              src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaCor4AIV__zuNlgGZTSr424NdUudWBQKBrA&usqp=CAU'
-              alt='movie poster'
+        src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
+        alt='movie poster'
               onClick={() => navigate('/player')}
             />
 
@@ -44,7 +44,7 @@ const Card = () => {
               className='movieName'
               onClick={() => navigate('/player')}
             >
-              Red notice
+              {movieData.name}
             </h1>
             <div className='icons'>
               <div className='controls'>
@@ -64,9 +64,9 @@ const Card = () => {
             </div>
             <div className='genre'>
               <ul>
-                <li>Action</li>
-                <li>Action</li>
-                <li>Action</li>
+               {movieData.genres.map((genre)=> {
+                return <li key={genre.id}>{genre}</li>
+               })}
               </ul>
             </div>
         </div>
@@ -74,11 +74,10 @@ const Card = () => {
     )}
     </CardContainer>
   );
-};
+});
 
 const CardContainer = styled.div`
   margin-top: 1rem;
-  background-color: red;
   max-width: 230px;
   width: 230px;
   height: 100%;
@@ -171,5 +170,3 @@ const CardContainer = styled.div`
     }
   }
 `;
-
-export default Card;

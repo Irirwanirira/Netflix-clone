@@ -18,16 +18,7 @@ export const getGenres = createAsyncThunk("netflix/genres", async()=> {
  return genres
 })
 
-const NetflixSlice = createSlice({
-  name: 'Netflix',
-  initialState,
-  extraReducers: (builder) => {
-    builder.addCase(getGenres.fulfilled, (state, action)=>{
-      state.genres = action.payload;
-      state.genresLoaded = true;
-    })
-  },
-});
+
 
 const arrayOfMoviesData = (array, moviesArray, generes)=> {
   array.forEach((movie) => {
@@ -61,10 +52,24 @@ const getMovieData  = async (api, genres,paging = false) => {
 
 export const fetchMovieData = createAsyncThunk("netflix/trending", async({type}, myThunk) => {
   const {netflix: { genres },} = myThunk.getState()
-  const data = getMovieData(`${TMDB_BASE_URL}/trending/${type}/week?api_key=${api_key}`, genres, true);
-  console.log(data);
+  return getMovieData(`${TMDB_BASE_URL}/trending/${type}/week?api_key=${api_key}`, genres, true);
   // return data
 })
+
+const NetflixSlice = createSlice({
+  name: 'Netflix',
+  initialState,
+  extraReducers: (builder) => {
+      builder.addCase(getGenres.fulfilled, (state, action)=>{
+      state.genres = action.payload;
+      state.genresLoaded = true;
+    })
+
+    builder.addCase(fetchMovieData.fulfilled, (state, action)=>{
+      state.movies = action.payload;
+    })
+  },
+});
 
 export const store = configureStore({
   reducer:{

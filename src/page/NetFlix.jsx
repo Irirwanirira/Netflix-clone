@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import TopNav from '../components/TopNav';
-import Card from '../components/Card';
+// import Card from '../components/Card';
 import { fetchMovieData, getGenres } from '../store';
+import SliderContainer from '../components/SliderContainer';
 
 const NetFlix = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +20,7 @@ const NetFlix = () => {
 
   const navigate = useNavigate();
 
+  const movies = useSelector((state) => state.netflix.movies)
   const genresLoaded = useSelector((state)=>state.netflix.genresLoaded)
 
   const dispatch = useDispatch();
@@ -34,6 +36,7 @@ const NetFlix = () => {
       dispatch(fetchMovieData({type: "all"}));
     }
   });
+  // console.log(movies);
 
   return (
     <HeroContainer>
@@ -71,7 +74,7 @@ const NetFlix = () => {
           </div>
         </div>
       </div>
-      <Card />
+      <SliderContainer movies={movies}/>
     </HeroContainer>
   );
 };
