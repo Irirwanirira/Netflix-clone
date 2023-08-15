@@ -24,7 +24,7 @@ const NetFlix = () => {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, []);
+  });
 
   useEffect(() => {
     if (genresLoaded) {
@@ -132,6 +132,22 @@ const HeroContainer = styled.div`
           padding-right: 2.4rem;
           border: 0.5px solid white;
           cursor: pointer;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 480px){
+    .hero{
+      max-width: 480px;
+      margin-left: -4rem;
+      .container{
+        .title{
+          h1{
+            font-size: 3rem;
+          }
+          p{
+            display: none;
+          }
         }
       }
     }

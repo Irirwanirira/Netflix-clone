@@ -113,7 +113,28 @@ const Wrapper = styled.div`
         }
       }
     }
+
+ 
+
   }
+  @media only screen and (max-width: 480px) {
+    .form-wrapper{
+      .form{
+        .title{
+          text-align: center;
+        }
+        .container{
+          input{
+            width: 20rem
+          }
+        }
+      }
+    }
+  }
+
+
+
+
 `;
 
 export default Login;

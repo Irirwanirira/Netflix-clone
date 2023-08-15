@@ -113,12 +113,13 @@ const Container = styled.div`
       padding: 0 25rem;
     }
     h4 {
-      margin-top: -1.5rem;
+      margin-top: 1.5rem;
     }
     h6 {
-      margin-top: -1.5rem;
+      margin-top: 1.5rem;
     }
     .form {
+      margin-top: 2rem;
       display: grid;
       width: 60%;
       grid-template-columns: ${({ showPassword }) =>
@@ -143,6 +144,80 @@ const Container = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 768px){
+    .content{
+      .body{
+        margin-top: 10rem;
+
+
+        .text{        
+          max-width: 480px;
+
+          h1{
+            font-size: 4rem;
+            align-self: center;
+          }
+          h4{
+           display: none;
+          }
+          h6{
+            padding:0 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            align-self: center;
+          }
+        }
+        .form{
+          input{
+            align-self: flex-start;
+            width: 20rem;
+          }
+        }
+    
+
+      }
+      
+    }
+  }
+
+  @media only screen and (max-width: 480px){
+    .content{
+      .body{
+        margin-top: 4rem;
+
+        .text{        
+          max-width: 480px;
+
+          h1{
+            font-size: 4rem;
+            align-self: center;
+          }
+          h4{
+           display: none;
+          }
+          h6{
+            padding:0 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            align-self: center;
+          }
+        }
+        .form{
+          margin-top:0;
+          input{
+            align-self: flex-start;
+            width: 13rem;
+            margin-left: -4rem;
+          }
+        }
+    
+
+      }
+      
+    }
+  }
 `;
+
+  
 
 export default SignUpPage;

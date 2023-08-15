@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h2>Netflix Clone</h2>
+  <h2>NETFLIX CLONE</h2>
 
 </div>
 
@@ -34,9 +34,9 @@ The interface of this React application is designed to display a list of movies 
 ## APP SCREENSHOTS
 
 <div>
-  <img src='./src/assets/mobile-screenshoot.png'/>
-  <img src='./src/assets/ipad-screenshoot.png' />
-  <img src='./src/assets/laptop-screenshot.png' />
+  <img src='./src/assets/mobile-version.png'/>
+  <img src='./src/assets/ipad-version.png' />
+  <img src='./src/assets/desktop-version.png' />
 </div>
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -63,7 +63,7 @@ The interface of this React application is designed to display a list of movies 
 - **getBoundingClientRect**
 
 
-<!-- INTODUCTION VIDEO -->
+<!-- INTRODUCTION VIDEO -->
 
 ## 🚀 Project Intro Video <a name="project-intro-video"></a>
 
