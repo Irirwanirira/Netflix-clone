@@ -73,7 +73,7 @@ The interface of this React application is designed to display a list of movies 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://i-joseph-dev.netlify.app)
 
 <!-- GETTING STARTED -->
 
