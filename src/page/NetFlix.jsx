@@ -136,6 +136,7 @@ const HeroContainer = styled.div`
       }
     }
   }
+
   @media only screen and (max-width: 480px){
     .hero{
       max-width: 480px;
