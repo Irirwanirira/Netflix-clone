@@ -132,7 +132,7 @@ const NavContainer = styled.div`
     gap: 1rem;
     margin-right: 1rem;
     button {
-      background-color: red;
+      background-color: black;
       border: none;
       cursor: pointer;
       border-radius: 50%;
