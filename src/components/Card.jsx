@@ -105,7 +105,7 @@ const CardContainer = styled.div`
       position: relative;
       height: 140px;
       img {
-        width: 100%;
+        width: 10%;
         height: 150px;
         object-fit: cover;
         border-radius: 0.3rem;
