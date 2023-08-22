@@ -109,7 +109,7 @@ const CardContainer = styled.div`
         height: 150px;
         object-fit: cover;
         border-radius: 0.3rem;
-        top: 10;
+        top: 0;
         z-index: 4;
         position: absolute;
       }
