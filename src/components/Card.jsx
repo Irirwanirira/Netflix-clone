@@ -108,7 +108,7 @@ const CardContainer = styled.div`
         width: 100%;
         height: 150px;
         object-fit: cover;
-        border-radius: 0.3rem;
+        border-radius: .3rem;
         top: 0;
         z-index: 4;
         position: absolute;
